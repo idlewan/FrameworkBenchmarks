@@ -7,12 +7,11 @@ from os.path import expanduser
 home = expanduser("~")
 
 def start(args, logfile, errfile):
-  setup_util.replace_text("nawak/model_redis.nim",
-                          'open\(host=.*\)',
-                          'open(host="' + args.database_host + '")')
+  setup_util.replace_text("nawak/model_postgre.nim", "host=.* port=5432",
+                          "host=" + args.database_host + " port=5432")
   # compile the app
   subprocess.check_call(
-      "nimrod c --threads:on -d:release -d:redis_model --path:../installs/nawak/nawak -o:nawak_redis app.nim",
+      "nim c --threads:on -d:release -d:postgre_model --path:$NAWAK_PATH -o:nawak_postgre app.nim",
       shell=True, cwd="nawak", stderr=errfile, stdout=logfile)
   # launch mongrel2
   subprocess.check_call("mkdir -p run logs tmp", shell=True, cwd="nawak/conf", stderr=errfile, stdout=logfile)
@@ -20,7 +19,7 @@ def start(args, logfile, errfile):
   subprocess.check_call("sudo m2sh start -name test", shell=True, cwd="nawak/conf", stderr=errfile, stdout=logfile)
   
   # launch workers
-  subprocess.Popen("./nawak_redis", shell=True, cwd="nawak", stderr=errfile, stdout=logfile)
+  subprocess.Popen("./nawak_postgre", shell=True, cwd="nawak", stderr=errfile, stdout=logfile)
   return 0
 
 def stop(logfile, errfile):
@@ -34,7 +33,7 @@ def stop(logfile, errfile):
   p = subprocess.Popen(['ps', 'aux'], stdout=subprocess.PIPE)
   out, err = p.communicate()
   for line in out.splitlines():
-    if 'nawak_redis' in line:
+    if 'nawak_postgre' in line:
       try:
         pid = int(line.split(None, 2)[1])
         os.kill(pid, 15)

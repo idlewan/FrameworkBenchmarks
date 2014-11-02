@@ -25,11 +25,11 @@ export SBT_HOME=${IROOT}/sbt
 export PERL_HOME=${IROOT}/perl-5.18
 export DART_HOME=${IROOT}/dart-sdk
 export RACKET_HOME=${IROOT}/racket-5.3.6
-export NIMROD_HOME=${IROOT}/nimrod
+export NIM_HOME=${IROOT}/nim
 export NGINX_HOME=/usr/local/nginx
 export ELIXIR_HOME=${IROOT}/elixir-0.13.3
 
-export PATH="$JAVA_HOME/bin:$GRAILS_HOME/bin:$PLAY_HOME:$PLAY1_HOME:$VERTX_HOME/bin:$GOROOT/bin:$NODE_HOME/bin:$HOME/FrameworkBenchmarks/installs/bin:$MAVEN_HOME/bin:$SBT_HOME/bin:$PERL_HOME/bin:$DART_HOME/bin:$RACKET_HOME/bin:$NIMROD_HOME/bin:$NGINX_HOME/sbin:$ELIXIR_HOME/bin:$PATH"
+export PATH="$JAVA_HOME/bin:$GRAILS_HOME/bin:$PLAY_HOME:$PLAY1_HOME:$VERTX_HOME/bin:$GOROOT/bin:$NODE_HOME/bin:$HOME/FrameworkBenchmarks/installs/bin:$MAVEN_HOME/bin:$SBT_HOME/bin:$PERL_HOME/bin:$DART_HOME/bin:$RACKET_HOME/bin:$NIM_HOME/bin:$NGINX_HOME/sbin:$ELIXIR_HOME/bin:$PATH"
 
 export LD_LIBRARY_PATH='$LD_LIBRARY_PATH:/usr/local/apr/lib'
 

@@ -52,7 +52,7 @@ fw_traperror () {
   #echo "  Bash line stack   : ${linestack[@]}"
 }
 
-# Requires dependencies to come in order e.g. Nimrod before
+# Requires dependencies to come in order e.g. Nim before
 # Jester, etc. Users should be know this 
 # fairly well (e.g. you can't use Yaf without PHP)
 fw_depends() {

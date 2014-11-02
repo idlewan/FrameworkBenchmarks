@@ -192,7 +192,7 @@ grails.sh  nawak.sh  play1.sh  siena.sh     vertx.sh  yesod.sh
 jester.sh  onion.sh  play2.sh  treefrog.sh  wt.sh
 $ ls languages
 composer.sh  erlang.sh   hhvm.sh   mono.sh    perl.sh     pypy.sh     racket.sh   urweb.sh
-dart.sh      go.sh       java.sh   nimrod.sh  phalcon.sh  python2.sh  ringojs.sh  xsp.sh
+dart.sh      go.sh       java.sh   nim.sh  phalcon.sh  python2.sh  ringojs.sh  xsp.sh
 elixir.sh    haskell.sh  jruby.sh  nodejs.sh  php.sh      python3.sh  ruby.sh     yaf.sh
 $ ls systools
 leiningen.sh  maven.sh
