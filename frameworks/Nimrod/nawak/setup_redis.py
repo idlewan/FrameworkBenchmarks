@@ -6,6 +6,7 @@ from os.path import expanduser
 
 home = expanduser("~")
 
+
 def start(args, logfile, errfile):
   setup_util.replace_text("nawak/model_redis.nim",
                           'open\(host=.*\)',
